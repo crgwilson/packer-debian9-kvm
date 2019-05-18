@@ -59,7 +59,21 @@
       ]
     }
   ],
-  "provisioners": [],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo mkdir /home/{{ user `ssh_user` }}/.ssh",
+        "sudo chown {{ user `ssh_user` }} /home/{{ user `ssh_user` }}/.ssh",
+        "sudo systemctl enable serial-getty@ttyS0.service"
+      ]
+    },
+    {
+      "type": "file",
+      "source": "provision/ssh/authorized_keys",
+      "destination": "/home/{{ user `ssh_user` }}/.ssh/authorized_keys"
+    }
+  ],
   "post-processors": []
 }
 
