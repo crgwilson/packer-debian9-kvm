@@ -8,7 +8,7 @@
       "iso_checksum_type": "{{ user `iso_checksum_type` }}",
       "iso_checksum_url": "{{ user `iso_checksum_url` }}",
 
-      "output_directory": "output/qemu/{{ user `vm_name` }}-{{ user `version` }}",
+      "output_directory": "output/qemu/{{ user `vm_name` }}-{{ user `version` }}.qcow2",
       "format": "qcow2",
 
       "headless": "true",
